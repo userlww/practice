@@ -1,0 +1,207 @@
+<!doctype html><!--声明html版本编写指令  H5-->
+<html>
+	<head>
+		<!--声明页面编码  uft-8 国际编码-->
+		<meta charset="UTF-8">
+		<!--网站三要素 关键字  页面描述  标题-->
+		<meta name="Keywords" content="">
+		<meta name="Description" content="'hkl'JkPhLHK"J">
+		<title>战狼二</title>
+	<style type="text/css">
+				*{
+		margin:0;
+		padding:0;
+		}
+		body{
+			background: rgb(55, 76, 86);
+		}
+		.photo{
+			width:320px;
+			height:600px;
+			margin:100px auto;
+			background:#000;
+			font-family:"微软雅黑";
+			padding: 5px;
+			background-color:#222;
+			border-radius: 20px;
+			box-shadow: 0 0 7px #fff;
+			overflow: hidden;
+		}
+		.top{
+			width:320px;
+			height:23px;
+			background:url("images/1.png") no-repeat;
+		}
+		.title{
+			width:320px;
+			height:30px;
+			background:url("images/2.png") no-repeat;
+			font-size:20px;
+			color:#ccc;
+			font-weight:bold;
+			text-align:center;
+			line-height:30px;
+		}
+		.play{
+			width:190px;
+			height:190px;
+			background:url("images/3.png") no-repeat;
+			margin:auto;
+			border-radius:50%;
+		}
+		.singer{
+			width:320px;
+			font-size:14px;
+			color:#ccc;
+			text-align:center;
+			line-height:40px;
+		}
+		.lrc{
+			width:300px;
+			height:285px;
+			margin:20px auto;
+			text-align:center;
+			overflow:hidden;
+			color:#ccc;
+		}
+		.lrc p{
+			line-height:20px;
+			font-size:12px;
+		}
+		.content{
+			position:relative;
+			left:0;
+			top:0;
+		}
+		.play.rotate{
+			-webkit-animation:rot 5s linear infinite;
+			-moz-animation:rot 5s linear infinite;
+			-ms-animation:rot 5s linear infinite;
+			-o-animation:rot 5s linear infinite;
+			animation:rot 5s linear infinite;
+		}
+
+		@keyframes rot{
+			from{transform:rotate(0deg);}
+			to{transform:rotate(360deg);}
+		}
+
+	</style>
+	</head>
+	<body>
+	<textarea id="txt" style="display:none">
+		[00:00.64]小幸运 - 谭嘉仪
+		[00:02.15]词：徐世珍&吴辉福
+		[00:03.70]曲：JerryC
+		[00:04.14]编曲：JerryC
+		[00:13.77]我听见雨滴落在青青草地
+		[00:19.89]我听见远方下课钟声响起
+		[00:25.74]可是我没有听见你的声音
+		[00:30.74]认真 呼唤我姓名
+		[00:37.92]爱上你的时候还不懂感情
+		[00:44.12]离别了才觉得刻骨 铭心
+		[00:50.09]为什么没有发现遇见了你
+		[00:54.70]是生命最好的事情
+		[01:00.30]也许当时忙着微笑和哭泣
+		[01:06.36]忙着追逐天空中的流星
+		[01:12.12]人理所当然的忘记
+		[01:16.55]是谁风里雨里一直默默守护在原地
+		[01:24.44]原来你是我最想留住的幸运
+		[01:29.69]原来我们和爱情曾经靠得那么近
+		[01:35.67]那为我对抗世界的决定
+		[01:40.29]那陪我淋的雨
+		[01:43.28]一幕幕都是你 一尘不染的真心
+		[01:50.60]与你相遇 好幸运
+		[01:53.96]可我已失去为你泪流满面的权利
+		[01:59.98]但愿在我看不到的天际
+		[02:04.63]你张开了双翼
+		[02:07.68]遇见你的注定 她会有多幸运
+		[02:27.28]青春是段跌跌撞撞的旅行
+		[02:33.44]拥有着后知后觉的美丽
+		[02:39.55]来不及感谢是你给我勇气
+		[02:44.22]让我能做回我自己
+		[02:49.72]也许当时忙着微笑和哭泣
+		[02:55.55]忙着追逐天空中的流星
+		[03:01.61]人理所当然的忘记
+		[03:06.03]是谁风里雨里一直默默守护在原地
+		[03:13.79]原来你是我最想留住的幸运
+		[03:19.05]原来我们和爱情曾经靠得那么近
+		[03:25.17]那为我对抗世界的决定
+		[03:29.68]那陪我淋的雨
+		[03:32.56]一幕幕都是你 一尘不染的真心
+		[03:39.89]与你相遇 好幸运
+		[03:43.40]可我已失去为你泪流满面的权利
+		[03:49.32]但愿在我看不到的天际
+		[03:53.97]你张开了双翼
+		[03:56.98]遇见你的注定
+		[04:00.47]Oh 她会有多幸运
+		</textarea>
+		<div class="photo">
+			<div class="top"></div>
+			<div class="title">小幸运</div>
+			<div class="singer">谭嘉仪</div>
+			<div class="play"></div>
+			<div class="lrc">
+				<div class="content"></div>
+			</div>
+		</div>
+		<audio src="mp3/谭嘉仪-小幸运.mp3" id="myMusic"></audio><!--音频标签-->
+	</body>
+	<script type="text/javascript">
+	//window.onload=function(){}页面加载后执行
+	var btn = document.getElementsByClassName("play")[0];//通过class类名去获取元素 数组的形式储存  []
+	var myMusic = document.getElementById("myMusic");//通过ID
+	var txt = document.getElementById("txt");
+	var con = document.getElementsByClassName("content")[0]
+	
+	var mark = true;//布尔值   true真  false假
+	btn.onclick = function(){
+		if (mark)//隐式转换  i > 1
+		{
+			this.className += " rotate";
+			myMusic.play();//播放音乐
+			mark = false;
+		}else{
+			this.className = "play";
+			myMusic.pause();//音乐暂停
+			mark = true;
+		}
+	}
+	var lrc = txt.value;
+	var lrcArr = lrc.split("[");//从哪个字符开始，分隔成数组
+	var html = "";
+	for (var i = 0;i<lrcArr.length ;i++ )
+	{
+		var arr = lrcArr[i].split("]");//分隔歌词与时间
+		var time = arr[0].split(".");//分隔毫秒与其他时间
+		var timer = time[0].split(":");//分隔分钟与秒
+		var ms = timer[0]*60 + timer[1]*1;//转化为秒钟
+		//字符串类型乘以数字类型就会转化成为数字类型
+		var text = arr[1];//获取歌词部分
+		if (text){
+		html +="<p id="+ms+">"+text+"</p>";
+		}
+		con.innerHTML = html;
+	}
+	var num = 0;
+	var oP = con.getElementsByTagName("p");//通过标签名获取所有p元素
+	myMusic.addEventListener("timeupdate",function(){
+		var curTime = parseInt(this.currentTime);//获取歌曲播放的时间 以秒为单位
+		if (document.getElementById(curTime))
+		{
+			for (var i = 0;i<oP.length ;i++)
+			{
+				oP[i].style.cssText = "color:#ccc;font-size:12px;"//在播放下一句之前把所有的歌词样式还原
+			}
+			document.getElementById(curTime).style.cssText = "color:red;font-size:18px;"
+			if (oP[7+num].id == curTime)
+			{
+				con.style.top = -20*num + "px";
+				num ++;//依次加一
+			}
+		}
+		
+	});//监听
+
+	</script>
+</html>

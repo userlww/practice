@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+		<style>
+		*{margin:0;padding:0;}
+		.banner{
+			width:1146px;
+			height:440px;
+			padding:15px 15px 0 15px;
+			background:#fff;
+			border:1px solid #eaeaea;
+			margin:50px auto;
+			position:relative;
+		}
+		.banner .pic{
+			width:1146px;
+			height:400px;
+			position:relative;
+			overflow:hidden;
+		}
+		.banner .pic ul li{
+			list-style:none;
+			width:100%;
+			height:400px;
+			position:absolute;
+			top:0;
+			left:100%;
+		}
+		.banner .text ul li{
+			list-style:none;
+			width:229px;
+			text-align:center;
+			float:left;
+			color:#666;
+			font-size:12px;
+			font-family:'微软雅黑';
+			line-height:35px;
+			cursor:pointer;
+		}
+		.banner .text ul li span{
+			float:right;
+			color:#ddd;
+		}
+		.banner .car{
+			width:229px;
+			height:3px;
+			background:#e6057d;
+			position:absolute;
+			bottom:-3px;
+			left:15px;
+		}
+		</style>
+	</head>
+	<body>
+	<div class="banner">
+		<div class="pic">
+			<ul id="pic">
+				<li style="background-image:url('images/VIP_img1.jpg');left:0;"></li>
+				<li style="background-image:url('images/VIP_img2.jpg')"></li>
+				<li style="background-image:url('images/VIP_img3.jpg')"></li>
+				<li style="background-image:url('images/VIP_img4.jpg')"></li>
+				<li style="background-image:url('images/VIP_img5.jpg')"></li>
+			</ul>
+		</div>
+		<div class="text">
+			<ul id="text-list">
+				<li>都市丽人品牌日<span>|</span></li>
+				<li>都市丽人集团年度钜献<span>|</span></li>
+				<li>哈森集团冬靴节 满498减50<span>|</span></li>
+				<li>运动大牌 最高满298减60<span>|</span></li>
+				<li>爱在唯品家 最高满298减80</li>
+			</ul>
+		</div>
+		<div class="car"></div>
+	</div>
+	<script src="js/move.js"></script>
+	<script>
+	var Car = document.getElementsByClassName('car')[0];//运动条
+	var oPic = document.getElementById('pic');
+	var aPicli = oPic.getElementsByTagName('li');//图片序列
+	var otext = document.getElementById('text-list');
+	var otextli = otext.getElementsByTagName('li');//文字序列
+	var index = 0;
+	for(var i=0;i<otextli.length;i++){
+		otextli[i].index = i;
+		otextli[i].onclick = function(){
+			var lastIndex = index;
+			var nowLeft = this.index*229+15;
+			var left = 1146;
+			index = this.index;
+			//运动条动画
+			move( Car , "left" , nowLeft , 20 );
+
+			if ( index > lastIndex )
+			{
+				left = -left;
+			};
+			aPicli[index].style.left = -left+'px';
+			//移出图片动画
+			move( aPicli[lastIndex] , 'left' , left , 50 );
+			//移入图片动画
+			move( aPicli[index] , 'left' , 0 , 50 );
+		}
+	};
+	</script>
+	</body>
+</html>

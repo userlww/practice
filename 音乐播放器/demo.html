@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<!-- 引用css样式-->
+<style type="text/css">
+*{margin:0px;}
+#Music{width:740px;/*宽*/ height:248px;/*高*/ background:url("images/bg2.png");/*背景颜色*/ 
+		margin:100px auto 0px;}
+#Music .MusicImg{width:248px;height:248px; float:left;/*左浮动*/}
+#Music .MusicCon{width:480px;height:248px;float:right;/*右浮动*/}
+#Music .MusicImg img.xxpic{border-radius:124px;/*圆的半径*/}
+#Music .MusicImg img.zq{-webkit-animation:zq 3s infinite linear;}
+	@-webkit-keyframes zq{
+							from{-webkit-transform:rotate(0deg);}
+							to{-webkit-transform:rotate(360deg);}
+						  }
+
+
+
+
+#Music .MusicCon  h3{color:#fff;font-size:22px;font-family:"微软雅黑"; font-weight:100;
+					 line-height:70px;/*竖直居中*/}
+#Music .MusicCon dl{width:470px;height:68px;}
+#Music .MusicCon dl dt{width:68px;height:68px;float:left;}
+#Music .MusicCon dl dd{width:380px;height:68px;float:right; position:relative;/*相对定位*/}
+#Music .MusicCon dl dd p.Music_jd{width:100%;height:5px; background:#898989;								position:absolute;/*绝对定位*/ top:30px; left:0px;}
+#Music .MusicCon dl dd  p.Music_jd2{width:0px;height:5px; background:#fff;								position:absolute; left:0px; top:30px;}
+</style>
+
+ </head>
+ <body>
+  
+<!-- div盒子模型，高度，宽度，放内容的长方形 姓名="张三"-->
+<div id="Music">
+
+	<!--左边图片开始-->
+	<div class="MusicImg"> 
+		<img src="images/music2.jpg" width="248" height="248" class="xxpic" /> 
+	</div>
+	<!--左边图片结束-->
+
+	<!--右边播放内容开始-->
+	<div class="MusicCon">
+		<h3>咱们结婚吧-蒋雪儿</h3>
+		<dl>
+			<dt><img src="images/play.png" class="playBut"/></dt>
+			<dd>
+				<p class="Music_jd"></p>
+				<p class="Music_jd2"></p>
+			</dd>
+		</dl>
+	</div>
+	<!--右边播放内容结束-->
+</div>
+
+<!--html5音乐播放器-->
+<audio src="mp3/梦的翅膀受了伤.mp3"  id="Music_audio"></audio>
+
+<!--引用外部jquery　类库文件-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript">
+	//点击播入按扭时
+	var mark=0; // 暂停
+	$("img.playBut").click(function(){
+
+		if(mark==0){
+			$(this).attr("src","images/pause.png"); //暂停的图片
+			$("#Music_audio").get(0).play();//播放音乐
+			$("img.xxpic").addClass("zq");
+			//定时器，定时调用进度条的状态
+			setInterval(play_jd,1000);
+			mark=1; //播放
+		}else{
+			$(this).attr("src","images/play.png"); //播放按扭图片
+			$("#Music_audio").get(0).pause();//暂停音乐
+			$("img.xxpic").removeClass("zq");
+			mark=0; //暂停
+		}
+		
+	});
+
+
+	//获取音乐播放进度条
+	function play_jd(){
+
+		var currTime=$("#Music_audio").get(0).currentTime;//当前播放时间
+		var allTime=$("#Music_audio").get(0).duration; //音乐的总时间
+		var bl=currTime/allTime;
+		var _width=bl*380;
+		$("p.Music_jd2").css("width",_width);
+
+
+		document.title=_width;
+
+
+
+	}
+	//play_jd();//调用函数
+
+
+
+
+</script>
+
+
+
+
+
+<!--
+	1、如何在页面当中，构建一个有宽度，高度的长方形（div盒子模型）
+	2、讲到了外边距的概念margin ,同时还解决了外边距的兼容型问题 *{margin:0px;}
+	3、利用外边距来控制长方形的位置,margin:上(100px) 左右(auto) 下(0px);
+	4、如何给页面当中的元素，添加一张前景图片 background:url("图片地址");
+	5、在大的长方形里面，构建两个小的长方形，分别利用左浮动（float:left）和右浮动(float:right;)，设置在水平方向，一个居中左，一个居右
+	6、如何在页面当中，插入一张图片 <img src="地址" width=""  height="" /> ,利用 html5最新技术 ，把图片变成圆角的 border-radius:半径大小;
+	7、如何控制文字样式 (大小 颜色 字体类型 文字不加粗 文字坚直距)
+	8、讲到了dl定义标签，构结 <dl>
+									<dt>标题</dt>
+									<dd>解释</dd>
+							  </dl>  为什么会选择这个标签来制作。
+-->
+ </body>
+</html>
