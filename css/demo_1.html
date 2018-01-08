@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display属性值探究demo</title>
+    <style type="text/css">
+        div
+        {
+        margin: 1em 0;
+            border: 1px solid black;
+        }
+
+        .one p
+        {
+            display: block;
+            width:6rem;
+            text-align: center;
+            color: red;
+        }
+        .two p
+        {
+            display: inline;
+            width: 6rem;
+            text-align: center;
+            color: red;
+        }
+        .three p
+        {
+            display: inline-block;
+            width: 6rem;
+            text-align: center;
+            color: red;
+
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    <p>hhhh,我是一个块级元素</p>很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+</div>
+<div class="two">
+    这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    <p>hhhh,我是一个行内元素</p>很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+</div>
+<div class="three">
+    这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+    <p>hhhh,我是一个行内块元素</p>很长很长很长很长很长很长很长很长很长很长很长很长很长
+    很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+</div>
+</body>
+</html>
