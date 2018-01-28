@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式图片</title>
+</head>
+<body>
+<picture alt="image description" >
+    <source srcset="img/index-1.jpg" media="(min-width:600px)">
+    <source srcset="img/index-2.jpg" media="(min-width:800px)">
+    <img src="img/index-3.jpg" alt="image description" style="width: 350px;height: 500px;">
+</picture>
+<br>
+<img srcset="img/index-2.jpg 320w,
+             img/index-3.jpg 480w,
+             img/index-4.jpg 800w" sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,  -+
+            800px"
+     src="img/index-1.jpg" alt="Elva dressed as a fairy" width="300px" HEIGHT="500PX">
+</body>
+</html>
