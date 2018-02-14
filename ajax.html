@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<iframe id="indexFrame" width="1000"
+ height="800" frameborder="0" marginwidth="0" marginheight="0"
+scrolling="yes" style="margin-top: 100px; background-color: #548DFF"></iframe>
+<button id="room" onclick='IndexClick("room")'>click me</button>
+<script type="text/javascript">
+    var indexFrame =document.getElementById("indexFrame");
+    indexFrame.src="css/demo_1.html";
+    function IndexClick(moduleKey){
+        var indexFrame=document.getElementById("indexFrame");
+        if(indexFrame=null){
+            indexFrame=parent.document.getElementById("indexFrame");
+        }
+        var url="css/demo_1.html";
+        break;
+
+    }
+
+</script>
+</body>
+</html>
